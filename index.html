@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html x-data="{colorMode: localStorage.getItem('colorMode') || localStorage.setItem('colorMode', 'light')}" x-init="$watch('colorMode', val => localStorage.setItem('colorMode', val))" x-bind:class="{'dark': colorMode === 'dark' || (colorMode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)}" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Cumbria Underwater Hockey</title>
+  <meta name="description" content="" />
+  <link rel="icon" type="image/x-icon" href="assets/CUWH_Logo.png">
+  <meta property="og:title" content="Home - Cumbria Underwater Hockey" />
+  <meta property="og:image" content="" />
+
+  <link id="heading-font" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&display=swap" media="all" />
+  <link rel="stylesheet" href="./css/styles.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+</head>
+
+<body x-data="{'openDialogId': ''}" x-on:keydown.escape="openDialogId=''" class="font-body antialiased text-[#41454c] bg-[#FFFFFF] dark:text-[#b3c3d9] dark:bg-[#000000]">
+  <div class="dark:bg-gray-900">
+    <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+      <div class="relative flex grid items-center grid-cols-2 lg:grid-cols-3">
+        <ul class="items-center hidden space-x-8 lg:flex">
+          <li class=""><a class="font-medium tracking-wide transition-colors duration-200 hover:text-teal-accent-400 dark:text-gray-100 text-gray-900" href="https://www.facebook.com/groups/991417775160194/">Facebook</a></li>
+          <li class=""><a class="font-medium tracking-wide transition-colors duration-200 hover:text-teal-accent-400 dark:text-gray-100 text-gray-900" href="https://www.instagram.com/cumbriauwh/">Instagram</a></li>
+          <li class=""><a class="font-medium tracking-wide transition-colors duration-200 hover:text-teal-accent-400 dark:text-gray-100 text-gray-900" href="https://www.gbuwh.co.uk/">BOA</a></li>
+        </ul><a class="inline-flex items-center lg:mx-auto" href="#"><span class="ml-2 text-xl font-bold tracking-wide uppercase dark:text-gray-100 text-gray-900">Cumbria Underwater Hockey</span></a>
+        <ul class="items-center hidden ml-auto space-x-8 lg:flex">
+          <li class=""></li>
+          <li class=""><a class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 shadow-md hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none bg-primary rounded-global" href="https://www.facebook.com/groups/991417775160194/">Join</a></li>
+        </ul>
+        <div :data-headlessui-state="open ? &#x27;open&#x27;: &#x27;&#x27;" x-data="{open: false}" class="relative flex justify-end lg:hidden">
+          <div :data-headlessui-state="open ? &#x27;open&#x27;: &#x27;&#x27;" class="inline-flex justify-center rounded-md px-4 py-2 text-sm font-medium dark:text-white hover:bg-opacity-30" x-on:click="open = !open"><span class="w-5 text-gray-600"><svg class="w-5 text-gray-600" class="w-5 text-gray-600" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"></path>
+                <path fill="currentColor" d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"></path>
+                <path fill="currentColor" d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"></path>
+              </svg></span></div>
+          <ul :data-headlessui-state="open ? &#x27;open&#x27;: &#x27;&#x27;" class="absolute right-0 text-gray-900 w-56 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg mt-10" x-show="open">
+            <li x-data="{active: false}" :data-headlessui-state="active ? &#x27;active&#x27; : &#x27;&#x27;" class="group flex rounded-md items-center w-full px-2 py-2 text-sm" x-on:mouseenter="active = true" x-on:mouseleave="active = false"><a href="#"><a class="" href="https://www.instagram.com/cumbriauwh/">Instagram</a></a></li>
+            <li x-data="{active: false}" :data-headlessui-state="active ? &#x27;active&#x27; : &#x27;&#x27;" class="group flex rounded-md items-center w-full px-2 py-2 text-sm" x-on:mouseenter="active = true" x-on:mouseleave="active = false"><a href="#"><a class="" href="https://www.facebook.com/groups/991417775160194/">Facebook</a></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="bg-center bg-no-repeat bg-cover" style="background-image:url(assets/SwimmingForPuck.jpg)">
+    <div class="px-4 py-32 mx-auto backdrop-brightness-50">
+      <div class="max-w-xl mx-auto text-center">
+        <h1 class="text-4xl font-extrabold text-slate-900 dark:text-slate-100 lg:text-5xl">
+          <p class="text-white font-medium">Cumbria Underwater Hockey</p>
+        </h1>
+        <div class="flex flex-wrap justify-center gap-4 mt-8"><a class="block w-full px-12 py-3 text-sm font-medium text-white rounded-global shadow active:bg-red-500 bg-primary-500 hover:bg-primary-700 focus:outline-none focus:ring sm:w-auto" href="https://www.facebook.com/groups/991417775160194/">Join Us</a></div>
+      </div>
+    </div>
+  </section>
+  <div class="py-6 sm:py-8 lg:py-12">
+    <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+      <div class="mb-10 md:mb-16">
+        <h2 class="text-gray-800 text-2xl font-bold text-center mb-4 dark:text-white md:mb-6 lg:text-3xl">Photo Gallery</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-6"><a class="group h-80 flex items-end overflow-hidden shadow-lg relative p-4 rounded-global bg-gray-50" href="https://www.instagram.com/p/CqJig3jjS0i/"><img class="w-full h-full object-cover object-center absolute inset-0 transition duration-200" alt="Olivia (pictured) Swimming at the bottom of the pool." src="assets/OliviaBottomPool.jpg" />
+          <div class="bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50 absolute inset-0 pointer-events-none"></div>
+          <div class="flex flex-col relative"><span class="text-white text-lg lg:text-xl font-semibold">Olivia (pictured) Swimming at the bottom of the pool.</span></div>
+        </a><a class="group h-80 flex items-end bg-gray-100 overflow-hidden shadow-lg relative p-4 rounded-global" href="https://www.instagram.com/p/CqJiQhZDhoq/"><img class="object-cover w-full h-full object-center absolute inset-0 transition duration-200 bg-gray-50" alt="No alt" src="assets/JaneManoeuvering.jpg" />
+          <div class="bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50 absolute inset-0 pointer-events-none"></div>
+          <div class="flex flex-col relative"><span class="text-white text-lg lg:text-xl font-semibold">Jane (pictured) manoeuvring the hockey puck.</span></div>
+        </a><a class="group h-80 flex items-end bg-gray-100 overflow-hidden shadow-lg relative p-4 rounded-global" href="#"><img class="object-cover w-full h-full object-center absolute inset-0 transition duration-200 bg-gray-50" alt="Underwater hockey players swimming for the puck" src="assets/SwimmingForPuck.jpg" />
+          <div class="bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50 absolute inset-0 pointer-events-none"></div>
+          <div class="flex flex-col relative"><span class="text-white text-lg lg:text-xl font-semibold">Underwater hockey players swimming for the puck.</span></div>
+        </a><a class="group h-80 flex items-end bg-gray-100 overflow-hidden shadow-lg relative p-4 rounded-global" href="#"><img class="object-cover w-full h-full object-center absolute inset-0 transition duration-200 bg-gray-50" alt="Olivia and Jane (pictured) at the Under 24 GB Training Camp." src="assets/U24GBCamp.jpg" />
+          <div class="bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50 absolute inset-0 pointer-events-none"></div>
+          <div class="flex flex-col relative"><span class="text-white text-lg lg:text-xl font-semibold">Olivia and Jane (pictured) at the Under 24 GB Training Camp.</span></div>
+        </a><a class="group h-80 flex items-end bg-gray-100 overflow-hidden shadow-lg relative p-4 rounded-global" href="https://www.instagram.com/p/CqfBwE2sltv/"><img class="object-cover w-full h-full object-center absolute inset-0 transition duration-200 bg-gray-50" alt="Cumbria Underwater Hockey Team (pictured) session." src="assets/CUWHTeam.jpg" />
+          <div class="bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50 absolute inset-0 pointer-events-none"></div>
+          <div class="flex flex-col relative"><span class="text-white text-lg lg:text-xl font-semibold">Cumbria Underwater Hockey Team (pictured) session.</span></div>
+        </a><a class="group h-80 flex items-end bg-gray-100 overflow-hidden shadow-lg relative p-4 rounded-global" href="https://www.instagram.com/p/CqfBwE2sltv/"><img class="object-cover w-full h-full object-center absolute inset-0 transition duration-200 bg-gray-50" alt="Underwater Hockey Kit (pictured): Diving Fins, Pucks, Masks, Snorkel&#x27;s, Gloves and Snorkel Holders." src="assets/UWHEquipment.jpg" />
+          <div class="bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50 absolute inset-0 pointer-events-none"></div>
+          <div class="flex flex-col relative"><span class="text-white text-lg lg:text-xl font-semibold">Underwater Hockey Kit (pictured): Diving Fins, Pucks, Masks, Snorkel&#x27;s, Gloves and Snorkel Holders.</span></div>
+        </a></div>
+    </div>
+  </div>
+  <div class="px-4 py-12 mx-auto sm:max-w-xl md:max-w-full md:px-24 lg:px-8 lg:py-14">
+    <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
+      <div class="max-w-xl mb-10 text-center md:mx-auto md:mb-12 lg:max-w-2xl">
+        <h2 class="max-w-lg mb-6 font-sans font-bold leading-none tracking-tight text-slate-900 dark:text-slate-100 text-2xl md:mx-auto lg:text-3xl">FAQ</h2>
+        <p class="sm:text-lg">Learn More about Underwater Hockey and our club.</p>
+      </div>
+      <div class="">
+        <div :data-headlessui-state="open ? &#x27;open&#x27;: &#x27;&#x27;" class="border-b dark:border-slate-700" x-data="{open: true}">
+          <div :data-headlessui-state="open ? &#x27;open&#x27;: &#x27;&#x27;" class="flex text-lg font-medium py-4 flex-row text-left px-4 w-full items-center justify-between hover:bg-slate-100 dark:hover:bg-slate-900" x-on:click="open = !open">What is Underwater Hockey?<span x-show="dynamic === &#x27;_disO&#x27;" class="inline-block text-2xl"><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
+              </svg></span><span x-show="dynamic === &#x27;&#x27;" class="inline-block text-2xl"><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path fill="none" d="M0 0h24v24H0V0z"></path>
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+              </svg></span></div>
+          <div :data-headlessui-state="open ? &#x27;open&#x27;: &#x27;&#x27;" class="px-4 mb-4 mt-2" x-show="open">Underwater Hockey (UWH) is a no-contact sport in which two teams attempt to manoeuvre a puck into the goal of the other team by moving it around the bottom of a swimming pool.
+            Six players from each team are actively playing at any given moment as they compete in two teams totaling 10 players. From a substitution area, the remaining players are continuously brought into the game.
+            The players wait in the water while touching the wall above the goal they are defending while the puck is placed in the centre of the pool. Both sides are allowed to swim wherever in the playing area and attempt to score by moving the puck into their opponents&#x27; goal.
+            The moment a player dives to the pool&#x27;s bottom, they hold their breath. Play continues until either a goal is scored, when players return to their wall to start a new point, or a break in play is signalled by a referee.</div>
+        </div>
+        <div :data-headlessui-state="open ? &#x27;open&#x27;: &#x27;&#x27;" class="border-b dark:border-slate-700" x-data="{open: true}">
+          <div :data-headlessui-state="open ? &#x27;open&#x27;: &#x27;&#x27;" class="flex text-lg font-medium py-4 flex-row text-left px-4 w-full items-center justify-between hover:bg-slate-100 dark:hover:bg-slate-900" x-on:click="open = !open">Who can play Underwater Hockey?<span x-show="dynamic === &#x27;_disO&#x27;" class="inline-block text-2xl"><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
+              </svg></span><span x-show="dynamic === &#x27;&#x27;" class="inline-block text-2xl"><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path fill="none" d="M0 0h24v24H0V0z"></path>
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+              </svg></span></div>
+          <div :data-headlessui-state="open ? &#x27;open&#x27;: &#x27;&#x27;" class="px-4 mb-4 mt-2" x-show="open">Underwater hockey is a sport inclusive for children and adults of all ages. As long as an individual can safely swim 25 meters they can participate. We currently have both a male and female team who in time the club will look to have a female team to enter competitions.</div>
+        </div>
+        <div :data-headlessui-state="open ? &#x27;open&#x27;: &#x27;&#x27;" class="border-b dark:border-slate-700" x-data="{open: true}">
+          <div :data-headlessui-state="open ? &#x27;open&#x27;: &#x27;&#x27;" class="flex items-center justify-between text-lg font-medium px-4 py-4 text-left w-full hover:bg-slate-100 dark:hover:bg-slate-900" x-on:click="open = !open">How do I join?<span x-show="dynamic === &#x27;_disO&#x27;" class="inline-block text-2xl"><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
+              </svg></span><span x-show="dynamic === &#x27;&#x27;" class="inline-block text-2xl"><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path fill="none" d="M0 0h24v24H0V0z"></path>
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+              </svg></span></div>
+          <div :data-headlessui-state="open ? &#x27;open&#x27;: &#x27;&#x27;" class="px-4 text-base mb-4 mt-2" x-show="open">You can message us on Facebook or Instagram if you want to join or have any questions.</div>
+        </div>
+        <div :data-headlessui-state="open ? &#x27;open&#x27;: &#x27;&#x27;" class="border-b dark:border-slate-700" x-data="{open: true}">
+          <div :data-headlessui-state="open ? &#x27;open&#x27;: &#x27;&#x27;" class="flex items-center justify-between text-lg font-medium px-4 py-4 text-left w-full hover:bg-slate-100 dark:hover:bg-slate-900" x-on:click="open = !open">What benefits does Underwater Hockey have?<span x-show="dynamic === &#x27;_disO&#x27;" class="inline-block text-2xl"><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
+              </svg></span><span x-show="dynamic === &#x27;&#x27;" class="inline-block text-2xl"><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path fill="none" d="M0 0h24v24H0V0z"></path>
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+              </svg></span></div>
+          <div :data-headlessui-state="open ? &#x27;open&#x27;: &#x27;&#x27;" class="px-4 text-base mb-4 mt-2" x-show="open">Underwater Hockey is a versatile sport, one that engages all the muscles in your body and gives you a full body workout. Swimming is an excellent cardiovascular exercise, working to strengthen your heart, improve circulation, lower your blood pressure and reduce the risk of a heart attack. Having a healthier heart will also reduce the effort it takes to perform daily activities such as climbing stairs and walking around. For adults swimming is a low impact activity on joints and bones and therefore we have a lot of individuals who can continue this sport as older adults, For younger people, the sport helps create a healthy lifestyle and provides an exercise outlet that engages the body and mind.</div>
+        </div>
+        <div :data-headlessui-state="open ? &#x27;open&#x27;: &#x27;&#x27;" class="border-b dark:border-slate-700" x-data="{open: true}">
+          <div :data-headlessui-state="open ? &#x27;open&#x27;: &#x27;&#x27;" class="flex items-center justify-between text-lg font-medium px-4 py-4 text-left w-full hover:bg-slate-100 dark:hover:bg-slate-900" x-on:click="open = !open">I have another question<span x-show="dynamic === &#x27;_disO&#x27;" class="inline-block text-2xl"><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
+              </svg></span><span x-show="dynamic === &#x27;&#x27;" class="inline-block text-2xl"><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path fill="none" d="M0 0h24v24H0V0z"></path>
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+              </svg></span></div>
+          <div :data-headlessui-state="open ? &#x27;open&#x27;: &#x27;&#x27;" class="px-4 text-base mb-4 mt-2" x-show="open">You can reach us on Instagram and Facebook. Links can be found at the top of the page.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- AlpineJS Library -->
+  <script defer src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      offset: 50,
+      duration: 800
+    });
+  </script>
+</body>
+
+</html>
